@@ -14,5 +14,9 @@ lazy val myAwesomeFramework =
       intellijPlugins += "com.intellij.properties".toPlugin,
       libraryDependencies += "com.eclipsesource.minimal-json" % "minimal-json" % "0.9.5" withSources(),
       Compile / unmanagedResourceDirectories += baseDirectory.value / "resources",
-      Test / unmanagedResourceDirectories    += baseDirectory.value / "testResources"
+      Test / unmanagedResourceDirectories    += baseDirectory.value / "testResources",
+
+      //lsp
+      resolvers += "jitpack" at "https://jitpack.io",
+      libraryDependencies += "com.github.ballerina-platform" % "lsp4intellij" % "0.95.1",
     )
